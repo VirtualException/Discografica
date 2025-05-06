@@ -161,11 +161,14 @@ public class VAutentificacion extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoUsuarioActionPerformed
 
+    // 'mariag', 'pass2345'
     private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
         etiquetaFallo.setVisible(false);
-        if (fa.comprobarAutentificacion(textoUsuario.getText(), textoClave.getText()))
+        /* SIEMPRE ENTRA */
+        if (true || fa.comprobarAutentificacion(textoUsuario.getText(), textoClave.getText()))
            this.dispose();
         else etiquetaFallo.setVisible(true);
+        //this.dispose();
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     /**

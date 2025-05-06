@@ -6,6 +6,7 @@
 package baseDatos;
 
 import aplicacion.Album;
+import aplicacion.Genero;
 import aplicacion.Trabajador;
 import aplicacion.DatosAdicionalesTrabajadores;
 import java.io.FileInputStream;
@@ -24,6 +25,7 @@ public class FachadaBaseDatos {
     private aplicacion.FachadaAplicacion fa;
     private java.sql.Connection conexion;
     private DAOTrabajadores daotrabajadores;
+    private DAOGeneros daogeneros;
 
     public FachadaBaseDatos (aplicacion.FachadaAplicacion fa){
         
@@ -60,6 +62,7 @@ public class FachadaBaseDatos {
             
 
             daotrabajadores = new DAOTrabajadores(conexion, fa);
+            daogeneros = new DAOGeneros(conexion, fa);
             
 
 
@@ -106,4 +109,24 @@ public class FachadaBaseDatos {
     public List<DatosAdicionalesTrabajadores> obtenerotdatos(String pasaporte){
         return daotrabajadores.obtenerotdatos(pasaporte);
     }
+    
+    
+    
+    public List<Genero> obtenerGenero(String nombre, String desc){
+        return daogeneros.obtenerGenero(nombre);
+    }
+    public void borrarGenero(String nombre, String desc){
+        daogeneros.borrarGenero(nombre, desc);
+    }
+    public void anadirGenero(String nombre, String desc){
+        List<Genero> generos = daogeneros.obtenerGenero(nombre);
+        if(generos.isEmpty()){
+            daogeneros.anadirNuevoGenero(nombre, desc);
+        }
+        else{
+            daogeneros.actualizarGenero(nombre, desc);
+        }
+    }
+    
+    
 }

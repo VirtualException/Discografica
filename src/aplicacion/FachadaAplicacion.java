@@ -16,6 +16,7 @@ public class FachadaAplicacion {
     gui.FachadaGui fgui;
     baseDatos.FachadaBaseDatos fbd;
     GestionTrabajadores ct;
+    GestionGeneros cg;
     
     
     
@@ -24,6 +25,7 @@ public class FachadaAplicacion {
    fgui=new gui.FachadaGui(this);
    fbd= new baseDatos.FachadaBaseDatos(this);
    ct= new GestionTrabajadores(fgui, fbd);
+   cg = new GestionGeneros(fgui, fbd);
    
  }
 
@@ -59,5 +61,17 @@ public Boolean comprobarAutentificacion(String usuario, String password){
     }
     public List<DatosAdicionalesTrabajadores> obtenerotdatos(String pasaporte){
         return ct.obtenerotdatos(pasaporte);
+    }
+    
+    
+    
+    public List<Genero> obtenerGenero(String nombre, String desc){
+        return cg.obtenerGenero(nombre, desc);
+    }
+    public void anadirGenero(String nombre, String desc){
+        cg.anadirGenero(nombre, desc);
+    }
+    public void borrarGenero(String nombre, String desc){
+        cg.borrarGenero(nombre, desc);
     }
 }

@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import aplicacion.Trabajador;
+import aplicacion.Genero;
 /**
  *
  * @author alumnogreibd
@@ -662,18 +663,40 @@ public class VPrincipal extends javax.swing.JFrame {
         gbc.fill = GridBagConstraints.NONE;
         gbc.weightx = 0.0;
         contenido.add(this.botonBuscarGeneros,gbc);
+        this.botonBuscarGeneros.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            String nombre = generosNombre.getText();
+            System.out.println("buscarGenero");
+            buscarGenero(nombre);
+        }
+        });
         
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.weightx = 0.0;
         contenido.add(this.botonBorrarGeneros,gbc);
+        this.botonBorrarGeneros.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            borrarGenero();
+        }
+        });
         
         gbc.gridx = 1;
         contenido.add(this.botonEditarGeneros,gbc);
+        this.botonEditarGeneros.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            editarGenero();
+        }
+        });
         
         gbc.gridx = 2;
         gbc.anchor = GridBagConstraints.EAST;
         contenido.add(this.botonNuevoGenero,gbc);
+        this.botonNuevoGenero.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            nuevoGenero();
+        }
+        });
         
         this.jDesktopPane1.add(ventanaCentral);
         ventanaCentral.setVisible(true);
@@ -953,4 +976,42 @@ private void editarTrabajador(){
         vt.setVisible(true);
     }
 }
+
+/* género */
+private void buscarGenero(String nombre) {
+    ModeloTablaGeneros m;
+        m=(ModeloTablaGeneros) tablaGeneros.getModel();
+        m.setFilas(fa.obtenerGenero(nombre, ""));
+        if (m.getRowCount() > 0) {
+            tablaGeneros.setRowSelectionInterval(0, 0);
+            generosNombre.setText(m.obtenerGenero(tablaGeneros.getSelectedRow()).getNombre());
+            //generosNombre.setText(m.obtenerGenero(tablaGeneros.getSelectedRow()).getDescripcion());
+            botonBorrarGeneros.setEnabled(true);
+            botonEditarGeneros.setEnabled(true);   
+        }
+        else {
+            botonBorrarGeneros.setEnabled(false);
+            botonEditarGeneros.setEnabled(false);
+        }
+}
+private void nuevoGenero() {
+    VGestionGenero vt = new VGestionGenero(this, true, this.fa);
+    vt.setVisible(true);
+}
+private void borrarGenero(){
+    String nombre = generosNombre.getText();
+    System.out.println("VPrincipal borrarGenero: " + nombre);
+    fa.borrarGenero(nombre, "");
+}
+private void editarGenero(){
+    String nombre = generosNombre.getText();
+    List<Genero> listageneros = fa.obtenerGenero(nombre, "");
+    for (Genero t: listageneros){
+        VGestionGenero vt = new VGestionGenero(this, true, this.fa, t);
+        vt.setVisible(true);
+    }
+}
+
+
+
 }
