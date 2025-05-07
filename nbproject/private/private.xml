@@ -4,16 +4,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/gui/VGestionAlbum.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/gui/FachadaGui.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/baseDatos/FachadaBaseDatos.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/gui/PanelAlbumes.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/aplicacion/FachadaAplicacion.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/gui/VGestionTrabajador.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/gui/VPrincipal.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/aplicacion/GestionTrabajadores.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/baseDatos/DAOTrabajadores.java</file>
-            <file>file:/home/alumnogreibd/Descargas/Discografica/src/gui/VAutentificacion.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/baseDatos/DAOGeneros.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/baseDatos/DAOTrabajadores.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/gui/VPrincipal.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/aplicacion/FachadaAplicacion.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/aplicacion/GestionGeneros.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/baseDatos/FachadaBaseDatos.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/gui/VAutentificacion.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/aplicacion/GestionTrabajadores.java</file>
+            <file>file:/home/alumnogreibd/Desktop/Descargas/Discografica1/src/gui/VGestionGenero.java</file>
         </group>
     </open-files>
 </project-private>

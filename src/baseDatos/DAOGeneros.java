@@ -105,7 +105,7 @@ public class DAOGeneros extends AbstractDAO {
 
         try {
         
-            stmGenero = con.prepareStatement("UPDATE genero SET desc = ? WHERE nombre = ?");
+            stmGenero = con.prepareStatement("UPDATE genero SET descripcion = ? WHERE nombre = ?");
         stmGenero.setString(1, desc);
         stmGenero.setString(2, nombre);
         stmGenero.executeUpdate();

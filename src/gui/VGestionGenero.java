@@ -31,6 +31,7 @@ public class VGestionGenero extends javax.swing.JDialog {
         initComponents();
         
         //ponemos los respectivos atributos en cada textfield para luego poder modificarlos
+        CampoNombre.setText(g.getNombre());
         CampoDescripcion.setText(g.getDescripcion());
     
     }
